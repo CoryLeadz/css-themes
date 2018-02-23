@@ -1,0 +1,160 @@
+.row {
+
+    @mixin clearfix {} 
+
+    @mixin atSmall {
+
+    &--b-margin-max-md {
+        margin-bottom: 1rem; 
+    }
+}
+
+    @mixin atMedium {
+
+    &--b-margin-max-md {
+        margin-bottom: 0; 
+        }
+
+        &--gutters > div {
+            padding-right: 65px; 
+        }
+    
+        &--gutters {
+            padding-right: -65px; 
+        }
+
+        &--gutters-sm {
+            padding-right: -45px; 
+        }
+    
+        &--gutters-sm > div {
+            padding-right: 45px; 
+        }
+    
+        &--gutters-lg {
+            padding-right: -100px; 
+        }
+    
+        &--gutters-lg > div {
+            padding-right: 100px; 
+        }
+    
+    }
+
+    @mixin atLarge {
+        
+        &--gutters-sm-on-lg {
+            padding-right: -45px; 
+        }
+    
+        &--gutters-sm-on-lg > div {
+            padding-right: 45px; 
+        }
+    }
+
+
+}
+
+/* COLUMNS */ 
+
+.col-4 {
+    float: left; 
+    width: 33.33%; 
+}
+
+.col-8 {
+    float: left; 
+    width: 66.66%; 
+}
+
+@mixin atMedium {
+
+.col-md-4 {
+    float: left; 
+    width: 33.33%; 
+}
+
+.col-md-6 {
+    float: left; 
+    width: 50%; 
+    }
+
+.col-md-8 {
+    float: left; 
+    width: 66.66%; 
+    }
+}
+
+
+@mixin atLarge {
+
+    .col-lg-4 {
+        float: left; 
+        width: 33.33%; 
+    }
+    
+    .col-lg-6 {
+        float: left; 
+        width: 50%; 
+        }
+    
+    .col-lg-8 {
+        float: left; 
+        width: 66.66%; 
+        }
+    }
+    
+
+/* SPACING */ 
+
+.t-pad-md {
+    @mixin atMedium {
+        padding-top: 80px;
+    } 
+}
+
+.pad-md {
+    padding-left: 0; 
+    padding-right: 0;
+
+    @mixin atMedium {
+        padding-left: 18px; 
+        padding-right: 18px;
+    }
+}
+
+
+.pad-lg {
+    padding-left: 0; 
+    padding-right: 0;
+    
+    @mixin atLarge {
+        padding-left: 18px; 
+        padding-right: 18px;
+    }
+}
+
+
+/* FLEXBOX */ 
+
+.flex-height-md {
+    @mixin atMedium {
+        display: flex; 
+    }
+    
+    & > div {
+        float: none; 
+        display: flex; 
+    }
+}
+
+.flex-height-lg {
+    @mixin atLarge {
+        display: flex; 
+    }
+    
+    & > div {
+        float: none; 
+        display: flex; 
+    }
+}

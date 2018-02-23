@@ -1,0 +1,94 @@
+/* STYLE.scss > SASS TESTING
+
+
+/* Variable TEST */ 
+
+$background-color: purple; 
+$blue: lightblue;  
+$red: pink; 
+$font-fam: Helvetica, sans-serif;
+$brand-color: red; 
+
+/* VARIABLE TEST */ 
+
+
+.variable-bg-blue {
+    background-color: $blue;
+}
+
+
+.div {
+    border: solid 2px red; 
+}
+
+body {
+    background-color: $red; 
+}
+
+
+
+/* Nesting & Extending Syntax */ 
+
+.nesting {
+    background-color: black; 
+
+    p {
+        @extend .nesting; 
+        color: white; 
+    }
+
+    a {
+        color: pink; 
+    }
+
+}
+
+
+
+
+/* Mixin Test */ 
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.radius { @include border-radius(10px); }
+
+
+/* Mixin Test */ 
+
+
+
+
+
+/* Width % and Padding calculation */ 
+
+.container { width: 100%; }
+
+
+.leftside {
+  float: left;
+  width: 600px / 960px * 100%;
+}
+
+.rightside {
+  float: right;
+  width: 300px / 960px * 100%;
+}
+
+
+/* Width % and Padding calculation */ 
+
+
+
+
+
+
+/* Re-Do this Speceficity Test? */ 
+
+.percentage {
+    width: percentage(2/7);
+}
