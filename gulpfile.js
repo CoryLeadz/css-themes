@@ -24,28 +24,28 @@ gulp.task('watch', function(){
         notify: false, 
         browser: 'google chrome',
         server: {
-            baseDir: "Natours/dev"
+            baseDir: "Tauvette/dev"
         }
     });
 });
     
-    watch('./Natours/dev/index.html', function(){
+    watch('./Tauvette/dev/index.html', function(){
         // TODO: update to *.html or any other front-end file type
         browserSync.reload();
     });
 
-    watch('./Natours/dev/assets/styles/**/*.scss', function(){
+    watch('./Tauvette/dev/assets/styles/**/*.scss', function(){
         gulp.start('cssInject');
     });
 
-    watch('./Natours/dev/assets/scripts/**/*.js', function(){
+    watch('./Tauvette/dev/assets/scripts/**/*.js', function(){
         gulp.start('scriptsRefresh');
     });
 
 // inject CSS into browserSync without reload 
 
 gulp.task('cssInject', ['css'], function(){
-    return gulp.src('./Natours/dev/temp/css/styles.css')
+    return gulp.src('./Tauvette/dev/temp/css/styles.css')
     .pipe(browserSync.stream());
 });
 
@@ -62,13 +62,13 @@ gulp.task('scriptsRefresh', ['scripts'], function() {
 //------------------------------------------------------------------------------
 
 gulp.task('css', function() {
-    return gulp.src('./Natours/dev/assets/styles/styles.css')
+    return gulp.src('./Tauvette/dev/assets/styles/styles.css')
         .pipe(postcss([cssImport, mixins, cssvars, nested, hexrgba, autoprefixer]))
         .on('error', function(error){
             console.log(error.toString());
             this.emit('end');
         })
-        .pipe(gulp.dest('./Natours/dev/temp/css/'))
+        .pipe(gulp.dest('./Tauvette/dev/temp/css/'))
 });
 
 
@@ -82,11 +82,11 @@ gulp.task('css', function() {
 //------------------------------------------------------------------------------
 
 gulp.task('modernizr', function(){
-    return gulp.src(['./Natours/dev/assets/styles/**/*.css'])
+    return gulp.src(['./Tauvette/dev/assets/styles/**/*.css'])
         .pipe(modernizr({
             'options': [
                 'setClasses' 
             ]   
         }))
-        .pipe(gulp.dest('./Natours/dev/temp/scripts'));
+        .pipe(gulp.dest('./Tauvette/dev/temp/scripts'));
 });
