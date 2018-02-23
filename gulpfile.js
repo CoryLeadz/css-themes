@@ -82,7 +82,7 @@ gulp.task('css', function() {
 //------------------------------------------------------------------------------
 
 gulp.task('modernizr', function(){
-    return gulp.src(['./Natours/dev/assets/styles/**/*.css', './Natours/dev/assets/scripts/**/*.js'])
+    return gulp.src(['./Natours/dev/assets/styles/**/*.css'])
         .pipe(modernizr({
             'options': [
                 'setClasses' 
