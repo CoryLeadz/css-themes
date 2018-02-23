@@ -10,9 +10,7 @@ mixins = require('postcss-mixins'),
 hexrgba = require('postcss-hexrgba'),
 watch = require('gulp-watch'),
 browserSync = require('browser-sync').create(),
-webpack = require('webpack'),
 modernizr = require('gulp-modernizr');
-
 
 
 //------------------------------------------------------------------------------
@@ -74,9 +72,13 @@ gulp.task('css', function() {
 });
 
 
+
+
+
 //------------------------------------------------------------------------------
 // GULP MODERNIZER
 // check browser for legacy requirements  
+// add this to BUILD task 
 //------------------------------------------------------------------------------
 
 gulp.task('modernizr', function(){
@@ -87,19 +89,4 @@ gulp.task('modernizr', function(){
             ]   
         }))
         .pipe(gulp.dest('./Natours/dev/temp/scripts'));
-});
-
-//------------------------------------------------------------------------------
-// GULP SCRIPTS 
-// Webpack javascript file compilation
-//------------------------------------------------------------------------------
-
-gulp.task('scripts', ['modernizr'], function(callback){
-    webpack(require('./webpack.config.js'), function(err, stats){
-        if (err) {
-            console.log(err.toString());
-        }
-        console.log(stats.toString());
-        callback();
-    });
 });
