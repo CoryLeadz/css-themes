@@ -1,13 +1,14 @@
-@import 'abstracts/mixins';
-@import 'abstracts/variables';
+@import 'abstracts/_mixins.scss';
+@import 'abstracts/_variables.scss';
 
-@import 'base/animations';
-@import 'base/global';
-@import 'base/typography';
-@import 'base/utilities';
+@import 'base/_animations.scss';
+@import 'base/_global.scss';
+@import 'base/_typography.scss';
+@import 'base/_utilities.scss';
 
-@import 'components/button';
+@import 'components/_button.scss';
 
-@import 'layout/header';
+@import 'layout/_grid.scss';
+@import 'layout/_header.scss';
 
-@import 'pages/home';
+@import 'pages/_home.scss';
